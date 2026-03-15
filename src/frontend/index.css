@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 1 0 0;
+    --foreground: 0.18 0.13 27;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.13 27;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.13 27;
+    --primary: 0.45 0.22 27;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.96 0.03 27;
+    --secondary-foreground: 0.45 0.22 27;
+    --muted: 0.95 0.02 27;
+    --muted-foreground: 0.50 0.10 27;
+    --accent: 0.55 0.25 27;
+    --accent-foreground: 1 0 0;
+    --destructive: 0.45 0.22 27;
+    --destructive-foreground: 1 0 0;
+    --border: 0.90 0.05 27;
+    --input: 0.90 0.05 27;
+    --ring: 0.50 0.22 27;
+    --radius: 0.5rem;
+    --chart-1: 0.45 0.22 27;
+    --chart-2: 0.60 0.20 27;
+    --chart-3: 0.72 0.15 27;
+    --chart-4: 0.82 0.10 27;
+    --chart-5: 0.90 0.05 27;
+    --sidebar: 0.97 0.01 27;
+    --sidebar-foreground: 0.18 0.13 27;
+    --sidebar-primary: 0.45 0.22 27;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.04 27;
+    --sidebar-accent-foreground: 0.45 0.22 27;
+    --sidebar-border: 0.88 0.06 27;
+    --sidebar-ring: 0.50 0.22 27;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+}
+
+@keyframes card-rise {
+  from { opacity: 0; transform: translateY(32px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+.card-animate { animation: card-rise 0.55s cubic-bezier(0.22,1,0.36,1) both; }
+.card-animate-1 { animation-delay: 0.05s; }
+.card-animate-2 { animation-delay: 0.12s; }
+.card-animate-3 { animation-delay: 0.19s; }
+.card-animate-4 { animation-delay: 0.26s; }
+.card-animate-5 { animation-delay: 0.33s; }
+
+@keyframes hero-fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.hero-fade   { animation: hero-fade 0.65s cubic-bezier(0.22,1,0.36,1) both; }
+.hero-fade-1 { animation-delay: 0s;    }
+.hero-fade-2 { animation-delay: 0.12s; }
+.hero-fade-3 { animation-delay: 0.24s; }
+.hero-fade-4 { animation-delay: 0.36s; }
+
+.red-glow {
+  box-shadow: 0 2px 12px -2px oklch(0.50 0.22 27 / 0.08);
+  transition: box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.red-glow:hover {
+  box-shadow: 0 8px 40px -8px oklch(0.50 0.22 27 / 0.35), 0 2px 12px -2px oklch(0.50 0.22 27 / 0.20);
+  transform: translateY(-5px) scale(1.01);
+}
+
+.crimson-rule {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, oklch(0.50 0.22 27), transparent);
+  border: none;
+  margin: 0 auto;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  background: oklch(0.45 0.22 27);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
